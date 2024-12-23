@@ -1,0 +1,6 @@
+# Ignorar la carpeta de configuración de WebStorm
+.idea/
+
+# Ignorar archivos generados por el sistema operativo
+.DS_Store
+Thumbs.db
