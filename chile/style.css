@@ -42,18 +42,17 @@ body {
     margin-top: 250px;
     margin-bottom: 20px;
     padding: 30px 40px;
-    width: 90%;
     max-width: 800px;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 20px;
     backdrop-filter: blur(8px);
     box-shadow: 0 0 30px rgba(153, 0, 204, 0.4);
-    border: 1px solid rgba(204, 0, 255, 0.2);
+    border: 3px solid rgba(204, 0, 255, 0.2);
 }
 
 .contador span {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 8px;
     padding: 20px;
     background: rgba(128, 0, 128, 0.2);
     border: 2px solid #800080;
@@ -86,6 +85,10 @@ footer .redes p {
     text-shadow: 0 0 5px #9933ff;
     letter-spacing: 1px;
 }
+
+.sts {
+    color: #ffffff;
+}
 /* Responsive para tablets y móviles */
 @media screen and (max-width: 768px) {
     .contenedor-header .h1 {
@@ -111,10 +114,12 @@ footer .redes p {
 
 @media screen and (max-width: 480px) {
     .contador {
-        margin-top: auto; /* Elimina margen fijo y lo deja respirar según el espacio */
+        margin-top: 450px; /* Elimina margen fijo y lo deja respirar según el espacio */
         margin-bottom: 40px; /* Separación del footer */
-        padding: 30px 15px;
+        padding: 30px 5px;
         font-size: 1.2rem;
+        border: 5px solid rgba(204, 0, 255, 0.2);
+
     }
 
     .contador span {
