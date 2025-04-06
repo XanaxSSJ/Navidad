@@ -10,7 +10,9 @@ body {
     background: url('/Images/Gengar.jpg') no-repeat center center fixed;
     background-size: contain;
     background-repeat: no-repeat;
-    background-color: #000; /* color de fondo si no cubre todo */
+    background-position: center;
+    background-attachment: scroll;
+    background-color: #07080C;
     color: #e6e6e6;
     min-height: 100vh;
     display: flex;
@@ -109,7 +111,7 @@ footer .redes p {
 
 @media screen and (max-width: 480px) {
     .contador {
-        margin-top: 500px; /* Elimina margen fijo y lo deja respirar según el espacio */
+        margin-top: auto; /* Elimina margen fijo y lo deja respirar según el espacio */
         margin-bottom: 40px; /* Separación del footer */
         padding: 30px 15px;
         font-size: 1.2rem;
