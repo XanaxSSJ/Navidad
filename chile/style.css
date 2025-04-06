@@ -116,16 +116,16 @@ footer .redes p {
     .contador {
         margin-top: 450px; /* Elimina margen fijo y lo deja respirar según el espacio */
         margin-bottom: 40px; /* Separación del footer */
-        padding: 30px 5px;
+        padding: 25px 5px;
         font-size: 1.2rem;
-        border: 5px solid rgba(204, 0, 255, 0.2);
+        border: 2px solid rgba(204, 0, 255, 0.2);
 
     }
 
     .contador span {
         min-width: 70px;
         font-size: 1rem;
-        padding: 12px;
+        padding: 8px;
     }
 
     footer {
