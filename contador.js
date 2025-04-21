@@ -5,7 +5,10 @@ const actualizaContador = () => {
     const diferencia = fechaObjetivo - ahora;
 
     if (diferencia < 0) {
+        // El contador muestra el mensaje de que llegó el día
         document.getElementById("contador").innerHTML = "¡Ya llegó el día!";
+        // No ocultamos el contador, solo cambiamos su texto.
+        document.getElementById("lista-regalos").style.display = "block";  // Mostrar lista de regalos
         return;
     }
 
@@ -15,10 +18,11 @@ const actualizaContador = () => {
     const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
     document.getElementById("contador").innerHTML =
-        `<span>${dias} días</span>` +
-        `<span>${horas} hrs</span>` +
-        `<span>${minutos} min</span>` +
+        `<span>${dias} días</span> ` +
+        `<span>${horas} hrs</span> ` +
+        `<span>${minutos} min</span> ` +
         `<span>${segundos} seg</span>`;
 };
 
+// Hacer que el contador se actualice cada segundo
 setInterval(actualizaContador, 1000);
