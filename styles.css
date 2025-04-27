@@ -1,0 +1,81 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', serif;
+}
+
+.message-container {
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #2a002a;
+    border-radius: 3px;
+    box-shadow: 0 0 15px rgba(70, 0, 70, 0.3);
+}
+
+.depressive-message {
+    color: #3a003a;
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+    line-height: 1.4;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px #1a001a;
+    animation: fadeIn 5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto de parpadeo sutil */
+.message-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 0, 10, 0.1);
+    pointer-events: none;
+    animation: flicker 15s infinite;
+}
+
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 0;
+    }
+    20%, 22%, 24%, 55% {
+        opacity: 0.1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .depressive-message {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .depressive-message {
+        font-size: 1.5rem;
+    }
+}
