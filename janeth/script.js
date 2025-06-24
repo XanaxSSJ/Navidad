@@ -1,29 +1,13 @@
 const mensaje = document.getElementById('mensaje');
 const musica = document.getElementById('musicaFondo');
-
-// Volumen inicial de música de fondo
-musica.volume = 0.3;
-
-// Reducir volumen al reproducir mensaje
-mensaje.addEventListener('play', () => {
-    musica.volume = 0.05;
-});
-
-// Volver al volumen normal al pausar o terminar
-mensaje.addEventListener('pause', () => {
-    musica.volume = 0.3;
-});
-
-mensaje.addEventListener('ended', () => {
-    musica.volume = 0.3;
-});
+let musicaIniciada = false; // Para evitar múltiples inicios
 
 // Animación con imágenes de mariposa azul
 const container = document.querySelector('.butterflies');
 
 for (let i = 0; i < 15; i++) {
     const img = document.createElement('img');
-    img.src = '/images/mariposa.png';
+    img.src = '../images/mariposa.png'; // ajusta según la carpeta real
     img.alt = 'mariposa azul';
     img.className = 'butterfly';
     img.style.left = `${Math.random() * 100}%`;
@@ -31,3 +15,23 @@ for (let i = 0; i < 15; i++) {
     img.style.animationDelay = `${Math.random() * 10}s`;
     container.appendChild(img);
 }
+
+// Control de reproducción
+mensaje.addEventListener('play', () => {
+    // Solo iniciar música si no se ha iniciado aún
+    if (!musicaIniciada) {
+        musica.volume = 0.05;
+        musica.play().catch(err => console.warn("Autoplay bloqueado:", err));
+        musicaIniciada = true;
+    } else {
+        musica.volume = 0.05; // bajar volumen si ya sonaba
+    }
+});
+
+mensaje.addEventListener('pause', () => {
+    musica.volume = 0.3;
+});
+
+mensaje.addEventListener('ended', () => {
+    musica.volume = 0.3;
+});
