@@ -7,7 +7,7 @@ const container = document.querySelector('.butterflies');
 
 for (let i = 0; i < 15; i++) {
     const img = document.createElement('img');
-    img.src = '../images/mariposa.png'; // ajusta según la carpeta real
+    img.src = '../Images/mariposa.png'; // ajusta según la carpeta real
     img.alt = 'mariposa azul';
     img.className = 'butterfly';
     img.style.left = `${Math.random() * 100}%`;
